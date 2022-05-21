@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2F63212832DC880092F9CD /* AnimalTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F63202832DC880092F9CD /* AnimalTypeButton.swift */; };
+		CE2F63272833043D0092F9CD /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F63262833043D0092F9CD /* AnimalsViewController.swift */; };
 		CE9BF01F282C3F4E00AD5ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF01E282C3F4E00AD5ADC /* AppDelegate.swift */; };
 		CE9BF021282C3F4E00AD5ADC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF020282C3F4E00AD5ADC /* SceneDelegate.swift */; };
 		CE9BF028282C3F4F00AD5ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9BF027282C3F4F00AD5ADC /* Assets.xcassets */; };
 		CE9BF02B282C3F4F00AD5ADC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9BF029282C3F4F00AD5ADC /* LaunchScreen.storyboard */; };
 		CE9BF033282C412D00AD5ADC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF032282C412D00AD5ADC /* OnboardingViewController.swift */; };
 		CE9BF035282C44F600AD5ADC /* AnimalTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF034282C44F600AD5ADC /* AnimalTypeViewController.swift */; };
+		CEDC65FD2835AA30001D4E71 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEDC65FF2835AA30001D4E71 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE2F63202832DC880092F9CD /* AnimalTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeButton.swift; sourceTree = "<group>"; };
+		CE2F63262833043D0092F9CD /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		CE9BF01B282C3F4E00AD5ADC /* Zoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9BF01E282C3F4E00AD5ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9BF020282C3F4E00AD5ADC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		CE9BF02C282C3F4F00AD5ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE9BF032282C412D00AD5ADC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		CE9BF034282C44F600AD5ADC /* AnimalTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeViewController.swift; sourceTree = "<group>"; };
+		CEDC65FE2835AA30001D4E71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CEDC66002835AA65001D4E71 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CEDC66032836B412001D4E71 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,9 +45,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2F631F2832DC6F0092F9CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE2F63202832DC880092F9CD /* AnimalTypeButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE2F63222832E71C0092F9CD /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE2F63232832E7240092F9CD /* Onboarding */,
+				CE2F63242832E72F0092F9CD /* Animal Types */,
+				CE2F63252833042B0092F9CD /* Animals */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE2F63232832E7240092F9CD /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF032282C412D00AD5ADC /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CE2F63242832E72F0092F9CD /* Animal Types */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF034282C44F600AD5ADC /* AnimalTypeViewController.swift */,
+				CE2F631F2832DC6F0092F9CD /* Views */,
+			);
+			path = "Animal Types";
+			sourceTree = "<group>";
+		};
+		CE2F63252833042B0092F9CD /* Animals */ = {
+			isa = PBXGroup;
+			children = (
+				CE2F63262833043D0092F9CD /* AnimalsViewController.swift */,
+			);
+			path = Animals;
+			sourceTree = "<group>";
+		};
 		CE9BF012282C3F4E00AD5ADC = {
 			isa = PBXGroup;
 			children = (
+				CEDC65FF2835AA30001D4E71 /* Localizable.strings */,
 				CE9BF01D282C3F4E00AD5ADC /* Zoo */,
 				CE9BF01C282C3F4E00AD5ADC /* Products */,
 			);
@@ -58,8 +110,7 @@
 			children = (
 				CE9BF01E282C3F4E00AD5ADC /* AppDelegate.swift */,
 				CE9BF020282C3F4E00AD5ADC /* SceneDelegate.swift */,
-				CE9BF032282C412D00AD5ADC /* OnboardingViewController.swift */,
-				CE9BF034282C44F600AD5ADC /* AnimalTypeViewController.swift */,
+				CE2F63222832E71C0092F9CD /* Scenes */,
 				CE9BF027282C3F4F00AD5ADC /* Assets.xcassets */,
 				CE9BF029282C3F4F00AD5ADC /* LaunchScreen.storyboard */,
 				CE9BF02C282C3F4F00AD5ADC /* Info.plist */,
@@ -109,6 +160,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				ar,
 			);
 			mainGroup = CE9BF012282C3F4E00AD5ADC;
 			productRefGroup = CE9BF01C282C3F4E00AD5ADC /* Products */;
@@ -126,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9BF02B282C3F4F00AD5ADC /* LaunchScreen.storyboard in Resources */,
+				CEDC65FD2835AA30001D4E71 /* Localizable.strings in Resources */,
 				CE9BF028282C3F4F00AD5ADC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +193,9 @@
 			files = (
 				CE9BF035282C44F600AD5ADC /* AnimalTypeViewController.swift in Sources */,
 				CE9BF01F282C3F4E00AD5ADC /* AppDelegate.swift in Sources */,
+				CE2F63272833043D0092F9CD /* AnimalsViewController.swift in Sources */,
 				CE9BF021282C3F4E00AD5ADC /* SceneDelegate.swift in Sources */,
+				CE2F63212832DC880092F9CD /* AnimalTypeButton.swift in Sources */,
 				CE9BF033282C412D00AD5ADC /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +211,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		CEDC65FF2835AA30001D4E71 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEDC65FE2835AA30001D4E71 /* en */,
+				CEDC66002835AA65001D4E71 /* ru */,
+				CEDC66032836B412001D4E71 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -162,6 +228,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -223,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -286,7 +354,6 @@
 				INFOPLIST_FILE = Zoo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -315,7 +382,6 @@
 				INFOPLIST_FILE = Zoo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
