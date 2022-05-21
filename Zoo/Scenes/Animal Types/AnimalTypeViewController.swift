@@ -19,14 +19,46 @@ struct AnimalTypeData {
     ]
 }
 
-class AnimalChoosingViewController: UIViewController {
+class BaseViewController: UIViewController {
+    var languageId: Int?
+}
+
+class AnimalChoosingViewController: BaseViewController {
+    
     var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        checkLanguage(with: languageId!)
         initLayout()
         createAnimalButtons()
+        
+        title = NSLocalizedString("animalType_title", comment: "")
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "gear"),
+            style: .plain,
+            target: self,
+            action: #selector(gearButtonPressed)
+        )
+    }
+    
+    @objc func gearButtonPressed() {
+        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+    }
+    
+    func checkLanguage(with Id: Int) {
+        switch Id {
+        case 0:
+            print("Armenian")
+        case 1:
+            print("Russian")
+        case 2:
+            print("English")
+        default:
+            fatalError()
+        }
     }
     
     func initLayout() {
@@ -37,23 +69,25 @@ class AnimalChoosingViewController: UIViewController {
     
     func createAnimalButtons() {
         AnimalTypeData.animals.forEach { animal in
-            let button = UIButton()
+            let button = AnimalTypeButton()
+            button.delegate = self
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.setImage(UIImage(named: "Mammals"), for: .normal)
             
-            button.tag = animal.id
-            button.addTarget(
-                self,
-                action: #selector(animalButtonPressed),
-                for: .touchUpInside
+            button.set(
+                data: AnimalTypeButtonData(
+                    id: animal.id, image: animal.imageName, name: animal.name
+                )
             )
             
             stackView.addArrangedSubview(button)
         }
     }
-    
-    @objc func animalButtonPressed(sender: UIButton) {
-        print(sender.tag)
+}
+
+extension AnimalChoosingViewController: AnimalButtonDelegate {
+    func buttonPressed(id: Int) {
+        let viewController = AnimalsViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -62,7 +96,7 @@ extension AnimalChoosingViewController {
         stackView = UIStackView()
         stackView.spacing = 10
         stackView.axis = .vertical
-        stackView.alignment = .center
+        stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -74,7 +108,9 @@ extension AnimalChoosingViewController {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            // Greater than or equal constraint
+            stackView.bottomAnchor.constraint(greaterThanOrEqualTo: view.bottomAnchor, constant: -30)
         ])
     }
 }

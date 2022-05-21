@@ -36,8 +36,13 @@ class OnboardingViewController: UIViewController {
     }
     
     @objc func getStartedButtonPressed() {
+        let languageId = pickerView.selectedRow(inComponent: 0)
         let viewController = AnimalChoosingViewController()
-        navigationController?.pushViewController(viewController, animated: true)
+        viewController.languageId = languageId
+        
+        navigationController?.pushViewController(
+            viewController, animated: true
+        )
     }
 }
 
@@ -46,15 +51,11 @@ extension OnboardingViewController: UIPickerViewDataSource, UIPickerViewDelegate
         return 1
     }
     
-    func pickerView(
-        _ pickerView: UIPickerView, numberOfRowsInComponent component: Int
-    ) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 3
     }
     
-    func pickerView(
-        _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int
-    ) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return languages[row]
     }
     
